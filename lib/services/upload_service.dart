@@ -50,6 +50,11 @@ class UploadService {
             file.path,
             filename: fileName,
           ),
+          'power_station_person': '',
+          'dispatch_center_person': '',
+          'work_order_id': '',
+          'work_record_id': '',
+          'split_number': '10',
           ...?additionalFields,
         });
 
