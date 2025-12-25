@@ -3,12 +3,15 @@ import 'package:path/path.dart' as path;
 
 class FileManagerService {
   // Move file to uploaded folder
-  Future<bool> moveToUploadedFolder(File file) async {
+  Future<bool> moveToUploadedFolder(
+    File file,
+    String monitoredFolderPath,
+  ) async {
     try {
-      // Get the parent directory
-      final parentDir = file.parent;
+      // Get parent directory of the monitored folder
+      final parentDir = Directory(monitoredFolderPath).parent;
 
-      // Create uploaded folder path
+      // Create uploaded folder path in the parent directory
       final uploadedDir = Directory(path.join(parentDir.path, 'uploaded'));
 
       // Create uploaded folder if it doesn't exist

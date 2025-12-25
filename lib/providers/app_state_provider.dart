@@ -166,7 +166,10 @@ class AppStateProvider extends ChangeNotifier {
 
     // Move file to uploaded folder if successful
     if (result.success) {
-      await _fileManager.moveToUploadedFolder(file);
+      await _fileManager.moveToUploadedFolder(
+        file,
+        _settings.monitoredFolderPath!,
+      );
     }
 
     notifyListeners();
